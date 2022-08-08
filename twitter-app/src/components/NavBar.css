@@ -1,24 +1,30 @@
+.nav-bar-wrapper {
+    text-align: center;
+}
+
 .nav-bar {
     list-style-type: none;
-    margin: 0;
+    margin-top: 15px;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
 }
 
-.nav-button {
-    float: left;
-}
 
 .nav-button {
-    display: block;
-    color: white;
-    text-align: center;
+    display: inline-block;
     padding: 14px 16px;
-    text-decoration: none;
 }
 
-.nav-button:hover {
-    background-color: #111;
+.nav-button-link {
+    text-decoration: none;
+    color: #222;
+    text-align: center;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.nav-button-link:hover {
     cursor: pointer;
-  }
+}

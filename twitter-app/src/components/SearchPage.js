@@ -1,4 +1,4 @@
-function SearchTweet() {
+function SearchPage() {
     return(
         <div>
             <input type='text'></input>
@@ -7,4 +7,4 @@ function SearchTweet() {
     );
 }
 
-export default SearchTweet;
+export default SearchPage;

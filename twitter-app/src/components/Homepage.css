@@ -1,3 +1,54 @@
-.home-page-image {
-    height: 400px;
+.flex-container {
+    display: flex;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.title-description-container {
+    flex: 1;
+}
+
+
+.title {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    margin-top: 200px;
+    color: #222;
+}
+
+.description {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    width: 500px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    line-height: 30px;
+}
+
+.dot-image-container {
+    flex: 1;
+}
+
+.dot-container {
+ margin-left: 200px;
+ margin-top: 75px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #777;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+.homepage-image {
+    height: 600px;
+    margin-left: 200px;
+    margin-top: 10px;
 }

@@ -1,12 +1,16 @@
 import './NavBar.css'
-function NavBar({setVisibleComponent}) {
+import { Link } from 'react-router-dom';
+
+function NavBar() {
 
     return(
-        <ul className='nav-bar'>
-            <li className='nav-button'><p onClick={() => setVisibleComponent('Homepage')}>Home</p></li>
-            <li className='nav-button'><p onClick={() => setVisibleComponent('SearchTweet')}>Search</p></li>
-            <li className='nav-button'><p onClick={() => setVisibleComponent('RandomTweet')}>Random</p></li>
-        </ul>
+        <div className='nav-bar-wrapper'>
+            <ul className='nav-bar'>
+                <li className='nav-button'><Link className='nav-button-link' to='/'>HOMEPAGE</Link></li>
+                <li className='nav-button'><Link className='nav-button-link' to='/search-page'>SEARCH PAGE</Link></li>
+                <li className='nav-button'><Link className='nav-button-link' to='/favorite-accounts'>FAVORITE ACCOUNTS</Link></li>
+            </ul>
+        </div>
     );
 }
 
