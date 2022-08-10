@@ -1,32 +1,50 @@
-.nav-bar-wrapper {
+.nav-bar-container {
     text-align: center;
+    box-sizing: border-box;
+    height: 60px;
 }
 
 .nav-bar {
     list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 
 .nav-button {
     display: inline-block;
     padding: 14px 16px;
+    box-sizing: border-box;
 }
 
 .nav-button-link {
     text-decoration: none;
-    color: black;
+    color: rgb(104, 104, 104);
     text-align: center;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 600;
     padding: 15px;
     line-height: 1vh;
+    position: relative;
 }
 
 .nav-button-link:hover {
     cursor: pointer;
+    color: black;
+}
+
+.nav-button-link::after {
+    content: '';
+    background-color: black;
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    margin-top: 20px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.nav-button-link:hover::after {
+    width: 100%;
 }
