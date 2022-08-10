@@ -11,11 +11,11 @@ function App() {
 
   return (
     <Router>
-    <div>
+    <div className='app'>
       <div>
         <NavBar/>
       </div>
-      <div>
+      <div className='routes-container'>
         <Routes>
           <Route exact path='/' element={<Homepage/>}/>
           <Route exact path='/search-page' element={<SearchPage/>} />

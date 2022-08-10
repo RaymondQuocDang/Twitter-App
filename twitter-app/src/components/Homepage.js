@@ -36,7 +36,7 @@ function Homepage() {
 
 
     return(
-        <div className='flex-container'>
+        <div className='flex-container-hp'>
             <div className='title-description-container'>
                 <div className='title-container'>
                     <h1 className='title'>Twitter Showcase App</h1>
