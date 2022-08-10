@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
 
+
   return (
     <Router>
     <div>
@@ -16,7 +17,7 @@ function App() {
       </div>
       <div>
         <Routes>
-          <Route exact path='/' element={<Homepage className='homepage-component' />} />
+          <Route exact path='/' element={<Homepage/>}/>
           <Route exact path='/search-page' element={<SearchPage/>} />
           <Route exact path='/favorite-accounts' element={<FavoriteAccounts/>} />
         </Routes>

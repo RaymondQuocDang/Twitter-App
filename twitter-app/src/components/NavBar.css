@@ -4,9 +4,10 @@
 
 .nav-bar {
     list-style-type: none;
-    margin-top: 15px;
     padding: 0;
     overflow: hidden;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
 }
 
 
@@ -17,12 +18,13 @@
 
 .nav-button-link {
     text-decoration: none;
-    color: #222;
+    color: black;
     text-align: center;
     font-family: Roboto, Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 600;
     padding: 15px;
+    line-height: 1vh;
 }
 
 .nav-button-link:hover {
