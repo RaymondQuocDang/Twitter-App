@@ -11,7 +11,8 @@ function FavoriteAccounts() {
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
                         <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>What it do baby!</p></div>
+                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <button className='account-summary-button'>Display Tweet</button>
                     </div>
                 </div>
                 <div className='tweet-wrapper-fa'>
