@@ -1,38 +1,128 @@
 import './SearchPage.css'
 import retweetSymbol from './images/retweet.png'
-import twitterProfilePic from './images/TwitterProfilePic.png'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import WarningButton from './WarningButton';
+
 
 function SearchPage() {
-    return(
-        <div className='search-page'>
-            <div className='search-box-container'>
-                <div className="search-box">
-                    <button className="btn-search"><p>🔍</p></button>
-                    <input type="text" className="input-search" placeholder="Type to Search..." />
-                </div>
-            </div>
-            <div className='tweet-wrapper'>
-                <div className='tweet-flex-container'>
+
+    const [tweets, setTweets] = useState([]);
+    const [search, setSearch] = useState('');
+    const [show, setShow] = useState(false);
+
+    function searchForTweets() {
+        
+        if (search === '') {
+            return;
+        }
+
+
+        if (search[0] === '@') {
+            search.slice(1)
+            searchTweetsWithUser();
+        } else {
+            searchTweetsWithContent();
+        }
+
+
+    }
+
+    async function searchTweetsWithContent () {
+        try {
+            let res = await axios.get('/tweets', {params: {'search_params': search}})
+            console.log(res.data.search_results);
+
+            if (res.data.search_results.length === 0) {
+                setShow(true);
+                return;
+            }
+
+            setTweets(res.data.search_results);
+
+        } catch (err) {
+            if (err.response) {
+                setShow(true);
+            }
+        }
+    }
+
+    async function searchTweetsWithUser () {
+        try {
+            let res = await axios.get('/usersTweets', {params: {'search_params': search}})
+            console.log(res.data.search_results);
+
+            if (res.data.search_results.length === 0) {
+                setShow(true);
+                return;
+            }
+
+            setTweets(res.data.search_results);
+
+        } catch (err) {
+            if (err.response) {
+                setShow(true);
+            }
+        }
+    }
+
+
+    function displaySearchedTweets() {
+
+        let tweetList = []
+
+        tweets.map((tweet, i) => {
+            tweetList.push(
+
+                <div key={i} className='tweet-flex-container'>
                     <div className='pp-flex-container'>
-                        <div><img className='profile-pic' src={twitterProfilePic} alt='Twitter default profile pic'></img></div>
+                        <div><img className='profile-pic' src={tweet.user.profile_image_url} alt='Twitter default profile pic'></img></div>
                     </div>
-                    <div className='content-container'> 
-                        <div className='username'>Username</div>
-                        <div className='text'>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</div>
-                        <div className='media'>Media</div>
+                    <div className='content-container'>
+                        <div className='username'>{tweet.user.name}</div>
+                        <div className='text'>{tweet.full_text}</div>
+                        {(() => { 
+                            if (tweet.hasOwnProperty('extended_entities')) {
+                                return (<div className='media-container'><img className='media' src={tweet.extended_entities.media[0].media_url}></img></div>)
+                            }
+                        })()}
                         <div className='retweet-likes-container'>
                             <div className='retweets-container'>
                                 <img className='retweet-symbol' src={retweetSymbol} alt='Retweet symbol'></img>
-                                <p>0</p>    
+                                <p className='retweet-count'>{tweet.retweet_count.toLocaleString('en-US')}</p>
                             </div>
-                            <div className='likes'>❤ 0</div>
+                            <div className='likes'>♡ {tweet.favorite_count.toLocaleString('en-US')}</div>
                         </div>
                     </div>
                 </div>
+            )
+        })
+
+        return tweetList
+    }
+
+    const tweetList = displaySearchedTweets();
+
+
+
+    return (
+        <div className='search-page'>
+            <WarningButton setShow={setShow} show={show} />
+            <div className='search-box-container'>
+                <div className="search-box">
+                    <button className="btn-search" onClick={() => searchForTweets()}><p>🔍</p></button>
+                    <input type="text" className="input-search" placeholder="Type to Search..." onChange={(e) => setSearch(e.target.value)} />
+                </div>
             </div>
+            <div className='tweet-wrapper'>
+                {tweetList}
+            </div>
+            
         </div>
-        
+
     );
 }
 
 export default SearchPage;
+
+

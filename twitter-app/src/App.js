@@ -5,9 +5,7 @@ import SearchPage from './components/SearchPage';
 import FavoriteAccounts from './components/FavoriteAccounts';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-
 function App() {
-
 
   return (
     <Router>
