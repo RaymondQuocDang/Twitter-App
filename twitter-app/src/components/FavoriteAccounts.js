@@ -1,6 +1,10 @@
 import './FavoriteAccounts.css';
 import retweetSymbol from './images/retweet.png';
-import twitterProfilePic from './images/TwitterProfilePic.png';
+import nintendoLogo from './images/NintendoLogo.png';
+import marvelLogo from './images/MarvelLogo.jpg';
+import nbaLogo from './images/NbaLogo.jpg';
+import olympicsLogo from './images/OlympicsLogo.jpg';
+import pokemonLogo from './images/PokemonLogo.jpg';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -44,8 +48,8 @@ function FavoriteAccounts() {
             <div className='account-summary-tweet-container'>
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
-                        <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <img className='account-summary-pic' src={nintendoLogo} alt='Default twitter profile pic'></img>
+                        <div><p className='account-summary-text'>Nintendo was a big part of my childhood. I have a switch and I still play nintendo games to this day.</p></div>
                         <button className='account-summary-button' name='nintendo_tweet_list' onClick={(e) => displayRandomTweet(e.target.name)}>Display Random Tweet</button>
                     </div>
                 </div>
@@ -115,8 +119,8 @@ function FavoriteAccounts() {
                 </div>
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
-                        <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <img className='account-summary-pic' src={marvelLogo} alt='Default twitter profile pic'></img>
+                        <div><p className='account-summary-text'>My favorite heroes are Iron man and Thor. Captain America grew on me over time too.</p></div>
                         <button className='account-summary-button' name='marvel_tweet_list' onClick={(e) => displayRandomTweet(e.target.name)}>Display Random Tweet</button>
                     </div>
                 </div>
@@ -124,8 +128,10 @@ function FavoriteAccounts() {
             <div className='account-summary-tweet-container'>
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
-                        <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <img className='account-summary-pic' src={nbaLogo} alt='Default twitter profile pic'></img>
+                        <div>
+                            <p className='account-summary-text'>I can't play basketball for the life of me but I enjoy watching the pros. Go Raps!</p>
+                            </div>
                         <button className='account-summary-button' name='nba_tweet_list' onClick={(e) => displayRandomTweet(e.target.name)}>Display Random Tweet</button>
                     </div>
                 </div>
@@ -195,8 +201,8 @@ function FavoriteAccounts() {
                 </div>
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
-                        <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <img className='account-summary-pic' src={olympicsLogo} alt='Default twitter profile pic'></img>
+                        <div><p className='account-summary-text'>Being an athlete throughout my school years has given me an appreciation for the passion and intensity that comes with competitive sports!</p></div>
                         <button className='account-summary-button' name='olympics_tweet_list' onClick={(e) => displayRandomTweet(e.target.name)}>Display Random Tweet</button>
                     </div>
                 </div>
@@ -204,8 +210,11 @@ function FavoriteAccounts() {
             <div className='account-summary-tweet-container'>
                 <div className='account-summary-container'>
                     <div className='account-summary-box'>
-                        <img className='account-summary-pic' src={twitterProfilePic} alt='Default twitter profile pic'></img>
-                        <div><p className='account-summary-text'>A description of the profile will go here.</p></div>
+                        <img className='account-summary-pic' src={pokemonLogo} alt='Default twitter profile pic'></img>
+                        <div>
+                        <p className='account-summary-title'></p>
+                            <p className='account-summary-text'>I used to dream of quitting school to become a pokemon master. 😂</p>
+                            </div>
                         <button className='account-summary-button' name='pokemon_tweet_list' onClick={(e) => displayRandomTweet(e.target.name)}>Display Random Tweet</button>
                     </div>
                 </div>
