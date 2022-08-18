@@ -1,6 +1,6 @@
 import './SearchPage.css'
 import retweetSymbol from './images/retweet.png'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import WarningButton from './WarningButton';
 
@@ -12,26 +12,21 @@ function SearchPage() {
     const [show, setShow] = useState(false);
 
     function searchForTweets() {
-        
+
         if (search === '') {
             return;
         }
 
-
         if (search[0] === '@') {
-            search.slice(1)
             searchTweetsWithUser();
         } else {
             searchTweetsWithContent();
         }
-
-
     }
 
-    async function searchTweetsWithContent () {
+    async function searchTweetsWithContent() {
         try {
-            let res = await axios.get('/tweets', {params: {'search_params': search}})
-            console.log(res.data.search_results);
+            let res = await axios.get('/tweets', { params: { 'search_params': search } })
 
             if (res.data.search_results.length === 0) {
                 setShow(true);
@@ -47,10 +42,9 @@ function SearchPage() {
         }
     }
 
-    async function searchTweetsWithUser () {
+    async function searchTweetsWithUser() {
         try {
-            let res = await axios.get('/usersTweets', {params: {'search_params': search}})
-            console.log(res.data.search_results);
+            let res = await axios.get('/usersTweets', { params: { 'search_params': search } })
 
             if (res.data.search_results.length === 0) {
                 setShow(true);
@@ -81,9 +75,9 @@ function SearchPage() {
                     <div className='content-container'>
                         <div className='username'>{tweet.user.name}</div>
                         <div className='text'>{tweet.full_text}</div>
-                        {(() => { 
+                        {(() => {
                             if (tweet.hasOwnProperty('extended_entities')) {
-                                return (<div className='media-container'><img className='media' src={tweet.extended_entities.media[0].media_url}></img></div>)
+                                return (<div className='media-container'><img className='media' src={tweet.extended_entities.media[0].media_url} alt='tweet media' ></img></div>)
                             }
                         })()}
                         <div className='retweet-likes-container'>
@@ -103,8 +97,6 @@ function SearchPage() {
 
     const tweetList = displaySearchedTweets();
 
-
-
     return (
         <div className='search-page'>
             <WarningButton setShow={setShow} show={show} />
@@ -117,7 +109,7 @@ function SearchPage() {
             <div className='tweet-wrapper'>
                 {tweetList}
             </div>
-            
+
         </div>
 
     );
