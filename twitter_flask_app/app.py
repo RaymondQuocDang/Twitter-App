@@ -3,12 +3,14 @@ from flask import Flask, request
 from flask_restful import Api
 import requests
 from requests.structures import CaseInsensitiveDict
+from flask_cors import CORS, cross_origin
 
-
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../twitter-app/build', static_url_path='')
 api = Api(app)
+CORS(app)
 
 @app.route('/tweets')
+@cross_origin()
 def search_tweets():
 
     search_params = request.args.get('search_params')
@@ -26,6 +28,7 @@ def search_tweets():
 
 
 @app.route('/usersTweets')
+@cross_origin()
 def search_users_tweets():
 
     search_params = request.args.get('search_params')
@@ -44,6 +47,7 @@ def search_users_tweets():
 
 
 @app.route('/favoriteAccountsTweets')
+@cross_origin()
 def search_favorite_accounts_tweets():
 
     url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3Anintendoamerica)&count=100&tweet_mode=extended"
@@ -89,6 +93,11 @@ def search_favorite_accounts_tweets():
         "pokemon_tweet_list": pokemon_tweet_list
         }
 
+
+@app.route('/')
+@cross_origin
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
