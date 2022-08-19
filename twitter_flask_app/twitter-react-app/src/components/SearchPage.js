@@ -77,6 +77,9 @@ function SearchPage() {
                         <div className='text'>{tweet.full_text}</div>
                         {(() => {
                             if (tweet.hasOwnProperty('extended_entities')) {
+                                if (tweet.extended_entities.media[0].type === 'video') {
+                                    return (<div className='media-container'><video className='media' src={tweet.extended_entities.media[0].video_info.variants[0].url}></video></div>)
+                                }
                                 return (<div className='media-container'><img className='media' src={tweet.extended_entities.media[0].media_url} alt='tweet media' ></img></div>)
                             }
                         })()}

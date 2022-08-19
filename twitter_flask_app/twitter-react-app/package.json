@@ -41,5 +41,5 @@
   "devDependencies": {
     "react-router-dom": "^6.3.0"
   },
-  "proxy": "https://twitter-showcase-app-rd.herokuapp.com/"
+  "proxy": "http://127.0.0.1:5000/"
 }
