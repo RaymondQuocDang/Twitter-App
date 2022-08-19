@@ -1,13 +1,11 @@
 from re import search
-from flask import Flask, request
-from flask_restful import Api
+from flask import Flask, request, send_from_directory
 import requests
 from requests.structures import CaseInsensitiveDict
 from flask_cors import CORS, cross_origin
 
-app = Flask(__name__, static_folder='../twitter-app/build', static_url_path='')
-api = Api(app)
-CORS(app)
+app = Flask(__name__, static_folder='twitter-react-app/build', static_url_path='')
+cors = CORS(app)
 
 @app.route('/tweets')
 @cross_origin()
@@ -95,9 +93,9 @@ def search_favorite_accounts_tweets():
 
 
 @app.route('/')
-@cross_origin
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b9c30f92.css",
+    "main.js": "/static/js/main.ba0930c6.js",
+    "static/media/TorontoSkyline.jpg": "/static/media/TorontoSkyline.d1d602fc388f7e0a153f.jpg",
+    "static/media/Iphone.jpg": "/static/media/Iphone.8c5f4d429f4591b21081.jpg",
+    "static/media/LaptopOnDesk.jpg": "/static/media/LaptopOnDesk.892207d3145dd534aff2.jpg",
+    "static/media/HoldingPhone.jpg": "/static/media/HoldingPhone.25e7c4a3e6159616216c.jpg",
+    "static/media/NintendoLogo.png": "/static/media/NintendoLogo.c54257db69e4bfee6206.png",
+    "static/media/MarvelLogo.jpg": "/static/media/MarvelLogo.62f1715be61c7988666c.jpg",
+    "static/media/NbaLogo.jpg": "/static/media/NbaLogo.5baea7e05cc6393108c8.jpg",
+    "index.html": "/index.html",
+    "main.b9c30f92.css.map": "/static/css/main.b9c30f92.css.map",
+    "main.ba0930c6.js.map": "/static/js/main.ba0930c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9c30f92.css",
+    "static/js/main.ba0930c6.js"
+  ]
+}
