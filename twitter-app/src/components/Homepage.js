@@ -42,7 +42,7 @@ function Homepage() {
                     <h1 className='title'>Twitter Showcase App</h1>
                 </div>
                 <div className='description-container'>
-                    <p className='description'>Welcome to my Twitter showcase App! Look up any tweets on the Search Page by typing in the account or content you're looking for. On the Favorite Accounts page you can click on some of the twitter accounts that I follow to randomly display their previous tweets. This web app shows off my front end development with React and Javascript, my back end development with Flask and Python, my ability to work with an external API while also sharing a glimpse of what you'd see on my personal twitter feed!</p>
+                    <p className='description'>Welcome to my Twitter Showcase App! Look up any tweets on the Search Page by typing in the account or content you're looking for. On the Favorite Accounts page you can view some of the twitter accounts that I follow and randomly display their previous tweets. This web app shows off my front end development with React and Javascript, my back end development with Flask and Python, my ability to work with an external API while also sharing a glimpse of what you'd see on my personal Twitter feed!</p>
                 </div>
             </div>
             <div className='image-container'>
