@@ -70,7 +70,7 @@
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
 }
 
-.tweet-wrapper {
+.tweet-wrapper-sp {
     margin-top: 20px;
     width: 40%;
     margin-left: auto;
@@ -79,7 +79,7 @@
     border-left: 1px solid lightgrey;
 }
 
-.tweet-flex-container {
+.tweet-flex-container-sp {
     border: 1px solid lightgrey;
     display: flex;
 }

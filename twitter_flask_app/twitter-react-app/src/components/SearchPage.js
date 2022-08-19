@@ -68,7 +68,7 @@ function SearchPage() {
         tweets.map((tweet, i) => {
             tweetList.push(
 
-                <div key={i} className='tweet-flex-container'>
+                <div key={i} className='tweet-flex-container-sp'>
                     <div className='pp-flex-container'>
                         <div><img className='profile-pic' src={tweet.user.profile_image_url} alt='Twitter default profile pic'></img></div>
                     </div>
@@ -106,7 +106,7 @@ function SearchPage() {
                     <input type="text" className="input-search" placeholder="Type to Search..." onChange={(e) => setSearch(e.target.value)} />
                 </div>
             </div>
-            <div className='tweet-wrapper'>
+            <div className='tweet-wrapper-sp'>
                 {tweetList}
             </div>
 
