@@ -25,4 +25,4 @@ It's pretty cool how much I've learned since starting this project. Looking back
 
 ## Author
 
-Raymond Dang - Full-Stack Software Developer - [Website](raymondquocdang.com) | [LinkedIn](https://www.linkedin.com/in/raymond-quoc-dang/)
+Raymond Dang - Full-Stack Software Developer - [Website](https://raymondquocdang.com/) | [LinkedIn](https://www.linkedin.com/in/raymond-quoc-dang/)
