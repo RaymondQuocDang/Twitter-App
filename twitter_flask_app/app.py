@@ -1,5 +1,3 @@
-from email.policy import default
-from re import search
 from flask import Flask, request, send_from_directory
 import requests
 from requests.structures import CaseInsensitiveDict
@@ -46,32 +44,27 @@ def search_users_tweets():
 @cross_origin()
 def search_favorite_accounts_tweets():
 
-    url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3Anintendoamerica)&count=100&tweet_mode=extended"
-    resp = requests.get(url, headers=default_header)
-    nintendo_tweet_list = resp.json()['statuses']
+    nintendo_url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3Anintendoamerica)&count=100&tweet_mode=extended"
+    nintendo_resp = requests.get(nintendo_url, headers=default_header)
+    
+    marvel_url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3AMarvel)&count=100&tweet_mode=extended"
+    marvel_resp = requests.get(marvel_url, headers=default_header)
 
-    url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3AMarvel)&count=100&tweet_mode=extended"
-    resp = requests.get(url, headers=default_header)
-    marvel_tweet_list = resp.json()['statuses']
+    nba_url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3ANBA)&count=100&tweet_mode=extended"
+    nba_resp = requests.get(nba_url, headers=default_header)
 
-    url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3ANBA)&count=100&tweet_mode=extended"
-    resp = requests.get(url, headers=default_header)
-    nba_tweet_list = resp.json()['statuses']
+    olympics_url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3AOlympics)&count=100&tweet_mode=extended"
+    olympics_resp = requests.get(olympics_url, headers=default_header)
 
-    url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3AOlympics)&count=100&tweet_mode=extended"
-    resp = requests.get(url, headers=default_header)
-    olympics_tweet_list = resp.json()['statuses']
-
-    url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3APokemon)&count=100&tweet_mode=extended"
-    resp = requests.get(url, headers=default_header)
-    pokemon_tweet_list = resp.json()['statuses']
+    pokemon_url = f"https://api.twitter.com/1.1/search/tweets.json?q=(from%3APokemon)&count=100&tweet_mode=extended"
+    pokemon_resp = requests.get(pokemon_url, headers=default_header)
 
     return {
-        "nintendo_tweet_list": nintendo_tweet_list, 
-        "marvel_tweet_list": marvel_tweet_list, 
-        "nba_tweet_list": nba_tweet_list,
-        "olympics_tweet_list": olympics_tweet_list, 
-        "pokemon_tweet_list": pokemon_tweet_list
+        "nintendo_tweet_list": nintendo_resp.json()['statuses'], 
+        "marvel_tweet_list": marvel_resp.json()['statuses'], 
+        "nba_tweet_list": nba_resp.json()['statuses'],
+        "olympics_tweet_list": olympics_resp.json()['statuses'], 
+        "pokemon_tweet_list": pokemon_resp.json()['statuses']
         }
 
 
