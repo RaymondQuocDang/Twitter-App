@@ -26,7 +26,7 @@ function SearchPage() {
 
     async function searchTweetsWithContent() {
         try {
-            let res = await axios.get('/tweets', { params: { 'search_params': search } })
+            let res = await axios.get('/tweets/search', { params: { 'search_params': search } })
 
             if (res.data.search_results.length === 0) {
                 setShow(true);
@@ -44,7 +44,7 @@ function SearchPage() {
 
     async function searchTweetsWithUser() {
         try {
-            let res = await axios.get('/usersTweets', { params: { 'search_params': search } })
+            let res = await axios.get('/tweets/users', { params: { 'search_params': search } })
 
             if (res.data.search_results.length === 0) {
                 setShow(true);
