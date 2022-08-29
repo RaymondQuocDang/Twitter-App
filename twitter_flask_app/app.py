@@ -11,7 +11,7 @@ default_header = CaseInsensitiveDict()
 default_header["Accept"] = "application/json"
 default_header["Authorization"] = "Bearer " + os.environ['TOKEN']
 
-@app.route('/tweets')
+@app.route('/tweets/search')
 @cross_origin()
 def search_tweets():
 
@@ -25,7 +25,7 @@ def search_tweets():
     return {"search_results": search_results, "param": search_params}
 
 
-@app.route('/usersTweets')
+@app.route('/tweets/users')
 @cross_origin()
 def search_users_tweets():
 
@@ -37,10 +37,10 @@ def search_users_tweets():
     resp = requests.get(url, headers=default_header)
     search_results = resp.json()['statuses']
 
-    return {"search_results": search_results, "param": search_params}
+    return {"search_results": search_results}
 
 
-@app.route('/favoriteAccountsTweets')
+@app.route('/tweets/favorite-accounts')
 @cross_origin()
 def search_favorite_accounts_tweets():
 
