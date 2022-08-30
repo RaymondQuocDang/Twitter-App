@@ -7,9 +7,11 @@ import os
 app = Flask(__name__, static_folder='twitter-react-app/build', static_url_path='')
 cors = CORS(app)
 
+token = os.environ["TOKEN"]
+
 default_header = CaseInsensitiveDict()
 default_header["Accept"] = "application/json"
-default_header["Authorization"] = "Bearer " + os.environ['TOKEN']
+default_header["Authorization"] = "Bearer " + token
 
 @app.route('/tweets/search')
 @cross_origin()
