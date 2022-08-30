@@ -3,7 +3,6 @@
 function AccountSummaryCard({ generateRandomTweet, logo, text, name }) {
 
     return (
-
         <div className='account-summary-container'>
             <div className='account-summary-box'>
                 <img className='account-summary-pic' src={logo} alt='Default twitter profile pic'></img>
