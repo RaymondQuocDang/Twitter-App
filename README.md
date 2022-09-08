@@ -7,7 +7,7 @@ Access it [here](https://twitter-showcase-app-rd.herokuapp.com/)
 ![Screenshot of Twitter App](./Twitter-App-SC.PNG)
 
 
-## Summary
+## Description
 
 This is my Twitter Showcase App. It works with the Twitter API in order to provide two main functions that displayed on separate pages. The Searcg Page allows you to search for tweets with keywords or users. On the Favorite Accounts page you will see my top five Twitter accounts and you can press a button to randomly display a few of their tweets. The process of creating this application was super fun and although it seemed a little daunting at the start, breaking the project down into smaller parts made it more manageable. This was the first time that I got to work with two different frameworks in one project. Combining React and Flask was tricky but having done it once, it will be definitely be easier going forward.
 
